@@ -60,6 +60,7 @@ class TaskListController: UITableViewController {
 //        }
 //      }
     }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -114,8 +115,7 @@ class TaskListController: UITableViewController {
         
     // изменяем текст в ячейке
     textLabel?.text = currentTask.title
-        
-    // изменяем цвет текста и символа
+        // изменяем цвет текста и символа
     if currentTask.status == .planned {
     textLabel?.textColor = .black
     symbolLabel?.textColor = .black } else {
@@ -134,19 +134,25 @@ class TaskListController: UITableViewController {
     resultSymbol = "" }
     return resultSymbol }
 
+    
     // ячейка на основе стека
     private func getConfiguredTaskCell_stack(for indexPath: IndexPath) -> UITableViewCell {
-    // загружаем прототип ячейки по идентификатору
+    
+        // загружаем прототип ячейки по идентификатору
     let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellStack", for: indexPath) as! TaskCell
-    // получаем данные о задаче, которые необходимо вывести в ячейке
+    
+        // получаем данные о задаче, которые необходимо вывести в ячейке
     let taskType = sectionsTypesPosition[indexPath.section]
     guard let currentTask = tasks[taskType]?[indexPath.row] else {
     return cell }
-    // изменяем текст в ячейке
+    
+        // изменяем текст в ячейке
     cell.title.text = currentTask.title
-    // изменяем символ в ячейке
+    
+        // изменяем символ в ячейке
     cell.symbol.text = getSymbolForTask(with: currentTask.status)
-    // изменяем цвет текста
+    
+        // изменяем цвет текста
     if currentTask.status == .planned {
     cell.title.textColor = .black
     cell.symbol.textColor = .black } else {
@@ -193,15 +199,9 @@ class TaskListController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [actionSwipeInstance])
     }
 
-    
-    
-    
-    
-    
-
 }
 
 //ffgrgergergg34g3ggggggggg
 /////dfdf/fdfffdffdff
-///
 ///kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+

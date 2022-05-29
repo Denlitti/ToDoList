@@ -126,11 +126,15 @@ class TaskListController: UITableViewController {
     }
     // возвращаем символ для соответствующего типа задачи
     private func getSymbolForTask(with status: TaskStatus) -> String {
+        
     var resultSymbol: String
     if status == .planned {
+        
     resultSymbol = "\u{25CB}"
     } else if status == .completed {
+        
     resultSymbol = "\u{25C9}" } else {
+        
     resultSymbol = "" }
     return resultSymbol }
 
@@ -168,6 +172,7 @@ class TaskListController: UITableViewController {
     return
         }
     // 2. Убеждаемся, что задача не является выполненной
+        
     guard tasks[taskType]![indexPath.row].status == .planned else {
     // снимаем выделение со строки
         tableView.deselectRow(at: indexPath, animated: true)

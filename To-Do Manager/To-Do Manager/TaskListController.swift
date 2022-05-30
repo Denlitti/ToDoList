@@ -39,6 +39,9 @@ class TaskListController: UITableViewController {
         super.viewDidLoad()
         //загрузка задач
         loadTasks()
+        
+        // кнопка активации режима редактирования
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     private func loadTasks() {
         ///подготовка колекции с задачами
